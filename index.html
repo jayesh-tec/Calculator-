@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        .calculator {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Calculator</h2>
+        <button onclick="calculate()">Start Calculator</button>
+        <script>
+            function calculate() {
+                var passcode = prompt('Please enter the passcode:').trim().toLowerCase();
+                if (passcode === 'jayesh is great') {
+                    var operation;
+                    do {
+                        operation = parseInt(prompt("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\nPlease enter your choice:"));
+                        switch (operation) {
+                            case 1:
+                                performAddition();
+                                break;
+                            case 2:
+                                performSubtraction();
+                                break;
+                            case 3:
+                                performMultiplication();
+                                break;
+                            case 4:
+                                performDivision();
+                                break;
+                            case 5:
+                                alert('Thanks for using us :)');
+                                break;
+                            default:
+                                alert('Invalid input!!!');
+                        }
+                    } while (operation !== 5);
+                } else {
+                    alert('Incorrect passcode!!!');
+                }
+            }
+            
+            function performAddition() {
+                var num1 = parseInt(prompt("Please input the first number:"));
+                var num2 = parseInt(prompt("Please input the second number:"));
+                if (!isNaN(num1) && !isNaN(num2)) {
+                    var result = num1 + num2;
+                    alert('The result is: ' + result);
+                } else {
+                    alert('Invalid number inputs!!!');
+                }
+            }
+            
+            function performSubtraction() {
+                var num1 = parseInt(prompt("Please input the first number:"));
+                var num2 = parseInt(prompt("Please input the second number:"));
+                if (!isNaN(num1) && !isNaN(num2)) {
+                    var result = num1 - num2;
+                    alert('The result is: ' + result);
+                } else {
+                    alert('Invalid number inputs!!!');
+                }
+            }
+            
+            function performMultiplication() {
+                var num1 = parseInt(prompt("Please input the first number:"));
+                var num2 = parseInt(prompt("Please input the second number:"));
+                if (!isNaN(num1) && !isNaN(num2)) {
+                    var result = num1 * num2;
+                    alert('The result is: ' + result);
+                } else {
+                    alert('Invalid number inputs!!!');
+                }
+            }
+            
+            function performDivision() {
+                var num1 = parseInt(prompt("Please input the first number:"));
+                var num2 = parseInt(prompt("Please input the second number:"));
+                if (!isNaN(num1) && !isNaN(num2)) {
+                    var result = num1 / num2;
+                    alert('The result is: ' + result);
+                } else {
+                    alert('Invalid number inputs!!!');
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
